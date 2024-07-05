@@ -1,5 +1,7 @@
 CREATE DATABASE LibraryManagement;
 
+USE LibraryManagement;
+
 CREATE TABLE Member (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100),
