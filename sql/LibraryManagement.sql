@@ -21,7 +21,7 @@ CREATE TABLE Book (
     date_publication DATE,
     disponibilite BOOLEAN,
     emplacement VARCHAR(100),
-    FOREIGN KEY (categorie_id) REFERENCES Catégorie(id)
+    FOREIGN KEY (categorie_id) REFERENCES Category(id)
 );
 
 CREATE TABLE Category (
@@ -37,6 +37,16 @@ CREATE TABLE Borrowing (
     date_emprunt DATE,
     date_retour_prevue DATE,
     date_retour_effective DATE,
-    FOREIGN KEY (membre_id) REFERENCES Membre(id),
-    FOREIGN KEY (livre_id) REFERENCES Livre(id)
+    FOREIGN KEY (membre_id) REFERENCES Member(id),
+    FOREIGN KEY (livre_id) REFERENCES Book(id)
+); 
+
+CREATE TABLE Reservation (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    membre_id INT,
+    livre_id INT,
+    date_reservation DATE,
+    statut ENUM('En attente', 'Confirmée', 'Annulée'),
+    FOREIGN KEY (membre_id) REFERENCES Member(id),
+    FOREIGN KEY (livre_id) REFERENCES Book(id)
 );
