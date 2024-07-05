@@ -29,3 +29,14 @@ CREATE TABLE Category (
     nom VARCHAR(100),
     description TEXT
 );
+
+CREATE TABLE Borrowing (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    membre_id INT,
+    livre_id INT,
+    date_emprunt DATE,
+    date_retour_prevue DATE,
+    date_retour_effective DATE,
+    FOREIGN KEY (membre_id) REFERENCES Membre(id),
+    FOREIGN KEY (livre_id) REFERENCES Livre(id)
+);
