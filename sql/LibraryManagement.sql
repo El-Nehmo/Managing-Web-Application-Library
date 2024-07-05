@@ -23,3 +23,9 @@ CREATE TABLE Book (
     emplacement VARCHAR(100),
     FOREIGN KEY (categorie_id) REFERENCES Catégorie(id)
 );
+
+CREATE TABLE Category (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100),
+    description TEXT
+);
