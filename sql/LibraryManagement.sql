@@ -50,3 +50,13 @@ CREATE TABLE Reservation (
     FOREIGN KEY (membre_id) REFERENCES Member(id),
     FOREIGN KEY (livre_id) REFERENCES Book(id)
 );
+
+CREATE TABLE History (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    membre_id INT,
+    livre_id INT,
+    date_action DATE,
+    type_action ENUM('Emprunt', 'Retour', 'Réservation'),
+    FOREIGN KEY (membre_id) REFERENCES Member(id),
+    FOREIGN KEY (livre_id) REFERENCES Book(id)
+);
