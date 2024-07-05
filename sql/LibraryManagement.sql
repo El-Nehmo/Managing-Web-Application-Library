@@ -10,3 +10,16 @@ CREATE TABLE Member (
     date_inscription DATE,
     amende DECIMAL(10, 2)
 );
+
+CREATE TABLE Book (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255),
+    auteur VARCHAR(255),
+    categorie_id INT,
+    isbn VARCHAR(13),
+    editeur VARCHAR(255),
+    date_publication DATE,
+    disponibilite BOOLEAN,
+    emplacement VARCHAR(100),
+    FOREIGN KEY (categorie_id) REFERENCES Catégorie(id)
+);
