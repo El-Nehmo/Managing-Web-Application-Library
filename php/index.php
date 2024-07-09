@@ -21,7 +21,7 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <header>
-        <h1>Bienvenu sur votre bibliothèque en ligne</h1>
+        <h1>Bienvenue sur votre bibliothèque en ligne</h1>
         <nav>
             <ul>
                 <li><a href="search.php">Rechercher des livres</a></li>
@@ -35,7 +35,7 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <section id="latest_book">
             <h2>Derniers livres ajoutés</h2>
             <ul>
-               <?php foreach($recent_books as $book): ?>
+               <?php foreach ($recent_books as $book): ?>
                 <li>
                     <h3><?php echo htmlspecialchars($book['titre']); ?></h3>
                     <p>
@@ -50,7 +50,7 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 - Bibliothèque - Tous droits réservés </p>	
+        <p>&copy; 2024 - Bibliothèque - Tous droits réservés</p>
     </footer>
 </body>
 </html>
