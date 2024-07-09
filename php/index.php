@@ -19,6 +19,17 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Bienvenu sur votre bibliothèqe en ligne </h1>
+        <nav>
+            <ul>
+                <li><a href="search.php">Rechercher des livres</a></li>
+                <li><a href="member.php">Gestion des membres</a></li>
+                <li><a href="borrow_reserve.php">Emprunter / Réserver</a></li>
+                <li><a href="history.php">Historique</a></li>
+            </ul>
+        </nav>
+    </header>
     
 </body>
 </html>
