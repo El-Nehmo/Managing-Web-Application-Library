@@ -49,5 +49,8 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </ul>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2024 - Bibliothèque - Tous droits réservés </p>	
+    </footer>
 </body>
 </html>
