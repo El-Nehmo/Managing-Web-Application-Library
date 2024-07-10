@@ -10,7 +10,8 @@ CREATE TABLE Member (
     telephone VARCHAR(15),
     email VARCHAR(100),
     date_inscription DATE,
-    amende DECIMAL(10, 2)
+    amende DECIMAL(10, 2), 
+    user_password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Book (
