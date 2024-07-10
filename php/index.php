@@ -9,7 +9,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-include 'headr.php';
+include 'header.php';
 
 ?>
 
