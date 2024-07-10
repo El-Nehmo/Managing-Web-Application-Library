@@ -12,4 +12,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $telephone = htmlspecialchars($_POST['telephone']);
     $email = htmlspecialchars($_POST['email']);
     $password = password_hash($_POST['password'] PASSWORD_BCRYPT);
-}
+
+    //VALIDATION DES DONNEES 
+    if (empty($nom) || empty($prenom) || empty($adresse) || empty($telephone) || empty($email) || empty($_POST['password'])) {
+        $error_message = 'Veuillez remplir tous les champs.';
+    }
+    
