@@ -9,6 +9,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+include 'headr.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -20,17 +22,7 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur votre bibliothèque en ligne</h1>
-        <nav>
-            <ul>
-                <li><a href="search.php">Rechercher des livres</a></li>
-                <li><a href="member.php">Gestion des membres</a></li>
-                <li><a href="borrow_reserve.php">Emprunter / Réserver</a></li>
-                <li><a href="history.php">Historique</a></li>
-            </ul>
-        </nav>
-    </header>
+   
     <main>
         <section id="latest_book">
             <h2>Derniers livres ajoutés</h2>
@@ -52,5 +44,8 @@ $recent_books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <footer>
         <p>&copy; 2024 - Bibliothèque - Tous droits réservés</p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
