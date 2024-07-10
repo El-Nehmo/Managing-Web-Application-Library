@@ -17,4 +17,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($nom) || empty($prenom) || empty($adresse) || empty($telephone) || empty($email) || empty($_POST['password'])) {
         $error_message = 'Veuillez remplir tous les champs.';
     }
-    
+}
