@@ -32,3 +32,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+<?php
+$title = 'Connexion - Bibliothèque';
+include 'header.php';
+?>
+<!--Formulaie de connexion-->
+<main>
+    <h2>Connexion</h2>
+    <?php
+    if(!empty($error_message)){
+        echo '<p style="color: red;">' . $error_message . '</p>';
+    }
+    ?>
+    <form method="post" action="#">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Se connecter</button>
+    </form>
+    <p>Pas encore inscrit ? <a href="register.php">C'est par ici</a></p>
+</main>
+<?php include 'footer.php'; ?>
