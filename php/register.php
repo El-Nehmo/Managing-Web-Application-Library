@@ -33,9 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php include 'header.php'; ?>
+<?php 
+$title = 'Inscription - Bibliothèque';
+include 'header.php';
+ ?>
+ 
 <main>
-    <h2>Inscription</h2>
     <?php
     // Afficher les messages d'erreur et de succès
         if(!empty($error_message)) {
