@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Bibliothèque</title>
+    <title><?php echo $title ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur votre bibliothèque en ligne</h1>
+        <h1>Bienvenu sur votre bibliothèque en ligne</h1>
         <nav>
             <ul>
                 <li><a href="search.php">Rechercher des livres</a></li>
