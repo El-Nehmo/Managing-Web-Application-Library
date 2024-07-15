@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../php/db_connection.php';
+require_once 'db_connection.php';
 
 // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
 if (!isset($_SESSION['user_id'])) {
@@ -28,7 +28,7 @@ $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de Bord - Bibliothèque</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php include 'header.php'; ?>
