@@ -22,6 +22,8 @@ $stmt_history->execute([$user_id]);
 $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+
+<!--
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,7 +33,10 @@ $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include 'header.php'; ?>
+-->
+    <?php 
+    $title = 'Tableau de Bord - Bibliothèque';
+    include 'header.php'; ?>
     <main>
         <h2>Bienvenue, <?php echo htmlspecialchars($user['prenom']); ?>!</h2>
         <section>
@@ -55,8 +60,8 @@ $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </main>
     <?php include 'footer.php'; ?>
-</body>
-</html>
+<!--</body>
+</html>-->
 
 
 
