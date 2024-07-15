@@ -1,35 +1,39 @@
 <?php
 session_start();
-require_once 'db_connection.php';
+require_once '../php/db_connection.php';
 
-//Redirige l'utilisateur vers la page de connexion s'il n'est pas connecté
-if(!isset($_SESSION['user_id'])){
+// Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
 
-//Récupérations des infos de l'utilisateur
+// Récupérer les informations de l'utilisateur
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM Member WHERE id = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//Récupération de l'histoire de l'utilisateur
-$sql_history = "SELECT * FROM History WHERE membre_id = ? ORDER BY date_inscription DESC LIMIT 5";
-
+// Récupérer l'historique récent de l'utilisateur
+$sql_history = "SELECT * FROM History WHERE membre_id = ? ORDER BY date_action DESC LIMIT 5";
 $stmt_history = $pdo->prepare($sql_history);
 $stmt_history->execute([$user_id]);
-$recent_history = $stmt_history->fetchall(PDO::FETCH_ASSOC);
+$recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!-- Affichage du tableau de bord -->
-
-<?php $title = 'Tableau de bord - Bibliothèque'; ?>
-<?php include 'header.php'; ?>
-
-<main>
-    <h2>Bienvenue, <?php echo htmlspecialchars($user['prenom']); ?>!</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Bibliothèque</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <?php include 'header.php'; ?>
+    <main>
+        <h2>Bienvenue, <?php echo htmlspecialchars($user['prenom']); ?>!</h2>
         <section>
             <h3>Résumé de l'activité récente</h3>
             <ul>
@@ -50,7 +54,9 @@ $recent_history = $stmt_history->fetchall(PDO::FETCH_ASSOC);
             </ul>
         </section>
     </main>
-<?php include 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
+</body>
+</html>
 
 
 
