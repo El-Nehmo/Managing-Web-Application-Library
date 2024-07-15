@@ -50,7 +50,7 @@ $recent_history = $stmt_history->fetchall(PDO::FETCH_ASSOC);
             </ul>
         </section>
     </main>
-    <?php include 'footer.php'; ?>
 <?php include 'footer.php'; ?>
+
 
 
