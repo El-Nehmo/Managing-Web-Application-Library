@@ -33,11 +33,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php 
-$title = 'Inscription - Bibliothèque';
-include 'header.php';
- ?>
- 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title ?></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Inscription - Bibliothèque</h1>
+        
+    </header> 
 <main>
     <?php
     // Afficher les messages d'erreur et de succès
@@ -66,5 +74,7 @@ include 'header.php';
         <button type="submit">S'inscrire</button>
     </form>
 </main>
-
 <?php include 'footer.php'; ?>
+</body>
+</html>
+
