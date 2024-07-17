@@ -31,6 +31,9 @@ $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Tableau de Bord - Bibliothèque</h1>
+    </header>
     <main>
         <h2>Bienvenue, <?php echo htmlspecialchars($user['prenom']); ?>!</h2>
         <section>
