@@ -45,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <header>
         <h1>Connexion - Bibliothèque</h1>
     </header>
-
 <!--Formulaie de connexion-->
 <main>
     <h2>Connexion</h2>

@@ -43,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <header>
-        <h1>Inscription - Bibliothèque</h1>
-        
+        <h1>Inscription - Bibliothèque</h1>    
     </header> 
 <main>
     <?php
@@ -56,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<p style="color: green;">' . $success_message . '</p>';
         }
     ?>
-
    <!-- Formulaire d'inscription --> 
     <form method="post" action="#">
         <label for="nom">Nom:</label>
