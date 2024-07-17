@@ -31,18 +31,6 @@ $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Tableau de Bord - Bibliothèque</h1>
-        <nav>
-            <ul>
-                <li><a href="search.php">Rechercher des livres</a></li>
-                <li><a href="borrow_reserve.php">Emprunter / Réserver</a></li>
-                <li><a href="profile.php">Mettre à jour le profil</a></li>
-                <li><a href="history.php">Voir l'historique complet</a></li>
-                <li><a href="logout.php">Se déconnecter</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <h2>Bienvenue, <?php echo htmlspecialchars($user['prenom']); ?>!</h2>
         <section>
@@ -62,6 +50,7 @@ $recent_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
                 <li><a href="borrow_reserve.php">Emprunter / Réserver</a></li>
                 <li><a href="profile.php">Mettre à jour le profil</a></li>
                 <li><a href="history.php">Voir l'historique complet</a></li>
+                <li><a href="logout.php">Se déconnecter</a></li>
             </ul>
         </section>
     </main>
