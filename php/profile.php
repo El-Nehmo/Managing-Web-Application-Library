@@ -6,5 +6,12 @@ require_once 'db_connection.php';
 if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
     exit();
+
+//Récupérer les infos de l'utilisateur
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM Member WHERE id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?>
