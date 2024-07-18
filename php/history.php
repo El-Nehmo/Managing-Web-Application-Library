@@ -6,3 +6,6 @@ require_once 'db_connection.php';
 if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
+
+//Récupérer les informations de l'utilisateur
+$user_id = $_SESSION['user_id'];
