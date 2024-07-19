@@ -25,7 +25,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>Profil - Bibliothèque</h1>
+    </header>
 </body>
 
 
