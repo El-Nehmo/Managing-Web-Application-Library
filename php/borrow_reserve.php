@@ -19,3 +19,18 @@ $stmt_books->execute();
 $availible_books = $stmt_books->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Emprunter/Réserver - Bibliothèque</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Emprunter/Réserver - Bibliothèque</h1>
+        </header>
+    </body>
+</html>
