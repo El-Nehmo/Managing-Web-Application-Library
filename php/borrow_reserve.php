@@ -8,4 +8,7 @@ if(!isset($_SESSION['user_id'])){
     exit();
 }
 
+//Récupérer les infos de l'utilisateur
+$user_id = $_SESSION['user_id'];
+
 ?>
