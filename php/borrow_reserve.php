@@ -11,13 +11,11 @@ if(!isset($_SESSION['user_id'])){
 //Récupérer les infos de l'utilisateur
 $user_id = $_SESSION['user_id'];
 
-
 //Récupérer les livres disponibles
 $sql_books = "SELECT * FROM Book WHERE disponibilite = 1";
 $stmt_books = $pdo->prepare($sql_books);
 $stmt_books->execute();
 $availible_books = $stmt_books->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
@@ -32,5 +30,19 @@ $availible_books = $stmt_books->fetchAll(PDO::FETCH_ASSOC);
         <header>
             <h1>Emprunter/Réserver - Bibliothèque</h1>
         </header>
+       <main>
+           <h2>Livres disponibles</h2>
+           <ul>
+                <?php foreach($availible_books as $ book): ?>
+                <li>
+                  <p>Titre: <?php echo htmlspecialchars($book['titre']); ?></p>
+                  <p>Auteur: <?php echo htmlspecialchars($book['auteur']); ?></p>
+                  <p><a href="borrow_book.php?book_id=<?php echo $book['id']; ?>">Emprunter</a></p>
+                <p><a href="reserve_book.php?book_id=<?php echo $book['id']; ?>">Réserver</a></p>
+                </li>
+               <?php endforeach; ?> 
+           </ul>
+       </main> 
+       <?php include 'footer.php';?>
     </body>
 </html>
