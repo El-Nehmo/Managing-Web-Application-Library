@@ -28,7 +28,19 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <header>
         <h1>Profil - Bibliothèque</h1>
     </header>
+   <main>
+        <h2>Information du profil</h2>
+        <ul>
+            <li>Nom: <?php echo htmlspecialchars($user['nom']);?></li>
+            <li>Prénom: <?php echo htmlspecialchars($user['prenom']);?></li>
+            <li>Adresse: <?php echo htmlspecialchars($user['adresse']);?></li>
+            <li>Téléphone: <?php echo htmlspecialchars($user['telephone']);?></li>
+            <li>Email: <? echo htmlspecialchars($user['email']);?></li>
+        </ul>
+   </main> 
+ <?php include 'footer.php';?>  
 </body>
+</html>
 
 
 
