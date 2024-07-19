@@ -11,4 +11,11 @@ if(!isset($_SESSION['user_id'])){
 //Récupérer les infos de l'utilisateur
 $user_id = $_SESSION['user_id'];
 
+
+//Récupérer les livres disponibles
+$sql_books = "SELECT * FROM Book WHERE disponibilite = 1";
+$stmt_books = $pdo->prepare($sql_books);
+$stmt_books->execute();
+$availible_books = $stmt_books->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
