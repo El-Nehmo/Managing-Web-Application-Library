@@ -33,7 +33,7 @@ $availible_books = $stmt_books->fetchAll(PDO::FETCH_ASSOC);
        <main>
            <h2>Livres disponibles</h2>
            <ul>
-                <?php foreach($availible_books as $ book): ?>
+                <?php foreach($availible_books as $book): ?>
                 <li>
                   <p>Titre: <?php echo htmlspecialchars($book['titre']); ?></p>
                   <p>Auteur: <?php echo htmlspecialchars($book['auteur']); ?></p>
