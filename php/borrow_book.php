@@ -19,4 +19,12 @@ $book_id = $GET['book_id'];
 $sql_update_book = "UPDATE Book SET disponiblite = 0 WHER id = ?";
 $stmt_update_book = $pdo->prepare($sql_update_book);
 $stmt_update_book->execute([$book_id]);
+
+//Mise à jour de l'historique de l'utilisateur
+$sql_insert_history = "INSERT INTO History (membre_id, type_action, date_action) VALUES (?, 'Emprunt', NOW()";
+$stmt_insert_history = $pdo->prepare($sql_insert_history);
+$stmt_insert_history->execute([$user_id]);
+
+header('Location: dashboard.php');
+exit();
 ?>
