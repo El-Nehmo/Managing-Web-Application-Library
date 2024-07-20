@@ -8,4 +8,10 @@ if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
     exit();
 }
+
+//Récupérer les infos de l'utilisateur
+$user_id = $_SESSION['user_id'];
+
+//Récupérer les infos du livre
+$book_id = $GET['book_id'];
 ?>
