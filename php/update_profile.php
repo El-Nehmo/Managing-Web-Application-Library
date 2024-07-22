@@ -26,5 +26,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $adresse = htmlspecialchars($_POST['adresse']);
     $telephone = htmlspecialchars($_POST['telephone']);
     $email = htmlspecialchars($_POST['email']);
+
+    //Validation des données 
+    if(empty($nom) || empty($prenom) || empty($adresse) || empty($telephone) || empty($email)){
+        $error_message = 'Veuillez remplir tous les champs';
+    }else{
+        //Mise à jour des infos de l'utilisateur
+        $sql_update = "UPDATE Membre SET nom = ?, prenom = ?, adresse = ?, telephone = ?, email = ? WHERE id = ?";
+        $stmt_update = $pdo->prepare($sql_update);
+
+        if($stmt_update->execute([$nom, $prenom, $adresse, $telephone, $email, $user_id])){
+            $succes_message = 'Profil mis à jour avec succès';
+        }else{
+            $error_message = 'Erreur lors de la mise à jour du profil';
+        }
+    }
 }
 ?>
