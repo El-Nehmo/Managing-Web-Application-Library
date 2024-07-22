@@ -17,4 +17,14 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $error_message = '';
 $succes_message = '';
+
+//Vérifier si le formulaire a été soumis 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    //Récupérer les données du formulaire
+    $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $adresse = htmlspecialchars($_POST['adresse']);
+    $telephone = htmlspecialchars($_POST['telephone']);
+    $email = htmlspecialchars($_POST['email']);
+}
 ?>
