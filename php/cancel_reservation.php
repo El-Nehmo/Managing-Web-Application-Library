@@ -7,4 +7,10 @@ if(!ISSET($_SESSION['user_id'])){
     header('Location: login.php');
     exit();
 }
+
+//Récupérer l'id de l'utilisateur
+$user_id = $_SESSION['user_id'];
+
+//Récupérer l'id de la réservation
+$reservation_id = $_GET['id'];
 ?>
