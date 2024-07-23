@@ -18,4 +18,12 @@ $reservation_id = $_GET['reservation_id'];
 $sql_insert_reservation  = "INSERT INTO Reservation SET statut = 'Annulée' WEHER id = ?";
 $stmt_insert_reservation = $pdo->prepare($sql_insert_reservation);
 $stmt_insert_reservation->execute([$reservation_id]);
+
+//Mise à jour de l'historique de l'utilisateur
+$sql_insert_history = "INSERT INTO History (membre_id, date_action, type_action)VALUES (?, NOW(), 'Annulation de réservation')";
+$stmt_insert_history = $pdo->prepare($sql_insert_history);
+$stmt_insert_history->execute([$user_id]);
+
+header('Location: dashboard.php');
+exit();
 ?>
