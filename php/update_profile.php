@@ -65,6 +65,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo '<p style="color: green;">' . $success_message . '</p>';
         }
         ?>
+
+        <!--Formulaire de mise à jour du profil-->
+        <form method="post" action="#">
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom" id="nom" value= "<?php echo htmlspecialchars($user['nom']); ?>" required>
+            <label for="prenom">Prénom:</label>
+            <input type="text" name="prenom" id="prenom" value = "<?php echo htmlspecialchars($user['prenom']); ?>" required>
+            <label for="adresse">Adresse:</label>
+            <input type="text" name="adresse" id="adresse" value = "<?php echo htmlspecialchars($user['adresse']); ?>" required>
+            <label for="telephone">Téléphone:</label>
+            <input type="text" name="telephone" id="telephone" value = "<?php echo htmlspecialchars($user['telephone']); ?>" required>  
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value = "<?php echo htmlspecialchars($user['email']); ?>" required>
+            <button type="submit">Mettre à jour</button>
+        </form>
     </main> 
 </body>
 </html>
