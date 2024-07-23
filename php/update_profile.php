@@ -43,3 +43,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier le profil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mise à jour du profil - Bibliothèque</h1>
+    </header>
+    <main>
+        <?php
+        //Affichage des messages d'erreuret de succès
+        if(!empty($error_message)) {
+            echo '<p style="color: red;">' . $error_message . '</p>';
+        }
+        if(!empty($success_message)) {
+            echo '<p style="color: green;">' . $success_message . '</p>';
+        }
+        ?>
+    </main> 
+</body>
+</html>
