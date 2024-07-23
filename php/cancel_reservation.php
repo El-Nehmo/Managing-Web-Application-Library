@@ -12,5 +12,10 @@ if(!ISSET($_SESSION['user_id'])){
 $user_id = $_SESSION['user_id'];
 
 //Récupérer l'id de la réservation
-$reservation_id = $_GET['id'];
+$reservation_id = $_GET['reservation_id'];
+
+//Mise à jour du statut de  la réservation
+$sql_insert_reservation  = "INSERT INTO Reservation SET statut = 'Annulée' WEHER id = ?";
+$stmt_insert_reservation = $pdo->prepare($sql_insert_reservation);
+$stmt_insert_reservation->execute([$reservation_id]);
 ?>
