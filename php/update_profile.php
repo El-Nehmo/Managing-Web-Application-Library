@@ -81,5 +81,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <button type="submit">Mettre à jour</button>
         </form>
     </main> 
+    <?php include 'footer.php'; ?> 
 </body>
 </html>
