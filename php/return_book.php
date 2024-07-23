@@ -18,4 +18,12 @@ $book_id = $_GET['id'];
 $sql_update_book = "UPDATE Book SET disponiblite = 1 WHERE id = ?";
 $stmt_update_book = $pdo->prepare($sql_update_book);
 $stmt_update_book->execute([$book_id]);
+
+//Mise à jour de l'historique de  l'utilisateur
+$sql_insert_history = "INSERT INTO History (membre_id, livre_id, date_action, type_action) VALUES (?, ?, NOW(), 'Retour')";
+$stmt_insert_history = $pdo->prepare($sql_insert_history);
+$stmt_insert_history->execute([$user_id, $book_id]);
+
+header('Location: dachboard.php');
+exit();
 ?>
