@@ -41,5 +41,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <input type="text" name="search_query" id="search_query" required>
             <button type="submit">Rechercher</button>
         </form>
+
+        <!--Affichage des résultats de recherche-->
+        <section>
+            <h2>Résultats de la recherche</h2>
+            <ul>
+                <?php foreach ($search_results as $book): ?>
+                <li>
+                    <h3><?php echo htmlspecialchars($book['titre']); ?></h3>
+                     <p>Auteur: <?php echo htmlspecialchars($book['auteur']); ?></p>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        </section>
     </main>
+    <?php include 'footer.php'; ?>
 </body>
+</html>
