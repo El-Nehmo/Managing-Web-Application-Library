@@ -23,3 +23,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $search_results = $stmt_search->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - Bibliothèque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>Recherche - Bibliothèque</header>
+    <main>
+       <!--Formulaire de recherche--> 
+        <form method="post" action="#">
+            <label for="search_query">Recherche:</label>
+            <input type="text" name="search_query" id="search_query" required>
+            <button type="submit">Rechercher</button>
+        </form>
+    </main>
+</body>
